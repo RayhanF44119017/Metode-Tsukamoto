@@ -1,0 +1,51 @@
+# Metode-Tsukamoto
+#include <iostream.h>
+#include <conio.h>
+#include <math.h>
+
+void main ()
+{double inp,miu,out;
+int pil;
+char konf;
+ulang:
+clrscr();
+cout<<"pilihan: \n1.Suhu Rendah(10-25) \n2.Suhu Sedang(15-35) \n3.Suhu Tinggi(25-35)\npilihan: ";
+cin>>pil;
+cout<<"masukan Domain: ";
+cin>>inp;
+if (pil==1)
+ {{miu=(25-inp)/15;}
+    if (miu<0.5)
+    {out=2000-2000*sqrt((1-miu)/2);}
+    else
+    {out=2000*sqrt(miu/2);} }
+else if (pil==2)
+      {    {if (inp<25)
+            {miu=(inp-10)/15;}
+         else
+          { miu=(35-inp)/10;}
+            if (inp<25)
+        {if (miu<0.5)
+        { out=2000-2000*sqrt((1-miu)/2);}
+        else
+        {out=3000-1000*sqrt(miu/2);}}
+    else
+        {if (miu<0.5)
+        { out=2000-2000*sqrt((1-miu)/2);}
+        else
+        {out=3000-1000*sqrt(miu/2);}}}}
+else
+     {miu=((inp-25)/10);
+         if (miu<0.5)
+    { out=2000+2000*sqrt(miu/2);}
+    else
+    {out=4000+2000*sqrt((1-miu)/2);}}
+cout<<"hasil u: "<<miu <<endl;
+cout<<"kecepatan putaran motornya: "<<out<<endl;
+cout<<"ulangi lagi(Y/T)??";
+cin >> konf;
+if (konf=='Y' || konf=='y')
+{        goto ulang;}
+else
+{getch();}}
+
